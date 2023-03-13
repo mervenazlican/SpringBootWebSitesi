@@ -78,9 +78,9 @@ public class SecurityConfig {
     		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
     		.authorizeHttpRequests()    	
     		.requestMatchers("/posts")//
-    		.authenticated()//
+    		.authenticated()//bu hali gizliyor
     		.requestMatchers(HttpMethod.GET, "/comments")
-    		.permitAll()
+    		.permitAll()//bu hali açıyor
     		.requestMatchers("/auth/**")
     		.permitAll()
     		.anyRequest().authenticated();
