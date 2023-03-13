@@ -29,7 +29,7 @@ public class JwtTokenProvider {
 		Date expireDate = new Date(new Date().getTime() + EXPIRES_IN);
 		return Jwts.builder().setSubject(Long.toString(userDetails.getId())).setIssuedAt(new Date())
 				.setExpiration(expireDate).signWith(SignatureAlgorithm.HS512, APP_SECRET).compact();
-		//bu kısımda setSubject kısmında convertToType problemi vardı. çözüldü?!
+		//bu kısımda setSubject kısmında convertToType problemi vardı.
 	}
 
 	Long getUserIdFromJwt(String token) {
